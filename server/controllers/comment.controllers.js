@@ -42,7 +42,7 @@ module.exports.editar = (req, res) => {
 
 //eliminar
 module.exports.eliminar=(request,response)=>{
-    Purchases.deleteOne({_id: request.params.id}  )
+    Comment.deleteOne({_id: request.params.id}  )
     .then(deleteConfirmation =>response.json(deleteConfirmation))
     .catch(err=>response.json(err))
 }
