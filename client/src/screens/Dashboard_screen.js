@@ -26,11 +26,18 @@ const Dashboard_screen=()=>{
     console.log('this is action button , y comments', comments)
   }
 
+const back_to_cover=e=>{
+  e.preventDefault()
+  console.log('back to cover')
+  navigate('/')
+}
+
     return(
 
         <div className="App">
             
             <button onClick={e=>handle_action(e)} >action</button>
+            <button onClick={e=>back_to_cover(e)} >back to cover</button>
             <CommentComponent comments={comments} setComments={setComments} />
             <List comments={comments} setComments={setComments} />
       

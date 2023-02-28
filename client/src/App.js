@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes, useNavigate, useNavigation } from 'react-
 import Register_screen from './screens/Register_screen';
 import Login_screen from './screens/Login_screen';
 import Dashboard_screen from './screens/Dashboard_screen';
+import Cover from './cover/Cover';
 
 
 function App() {
@@ -34,16 +35,8 @@ const handleSubmit=e=>{
 
     e.preventDefault()
     console.log('. . . . . . new run')
-    //console.log('username ...', username)
-    //console.log('email ....', email)
-    //console.log('password ....', password)
-    //console.log('confirm pwd ...', confirmPassword)
 
-    // aqui hacer el axios Post de la info
-
-    //esta info está en MERN SPANISH - Full Stack Mern
-    // "Crear (Pt 2)"
-
+    
     axios.post('http://localhost:8000/api/user/register',{
       name:username,
       email,
@@ -85,7 +78,8 @@ const handleSubmit=e=>{
 
                 <Route path='/register' element={<Register_screen/> } />
 
-                <Route path='/' element={<Dashboard_screen/> } />
+                <Route path='/dashboard' element={<Dashboard_screen/> } />
+                <Route path='/' element={<Cover/> } />
 
 
           </Routes>
