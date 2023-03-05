@@ -79,7 +79,7 @@ const handleSubmit=e=>{
                 <Route path='/register' element={<Register_screen/> } />
 
                 <Route path='/dashboard' element={<Dashboard_screen/> } />
-                <Route path='/' element={<Cover/> } />
+                <Route path='/' element={<Dashboard_screen/> } />
 
 
           </Routes>
