@@ -1,75 +1,55 @@
-import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import CommentComponent from '../components/CommentComponent';
-import List from '../components/List';
-import Image_component from '../Image_component/Image_component';
-import FontAwesome from 'react-fontawesome'
-import ReactDom from 'react-dom'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+const element = <FontAwesomeIcon icon={faCoffee} />
 
 
-// Import Projects
-import stock_3 from '../img_mystocks/stock_3.png'
-import stock_4 from '../img_mystocks/stock_4.png'
-import stock_5 from '../img_mystocks/stock_5.png'
-
-// Import Background Img
-import zurich_pexels from '../pexels/zurich_pexels.jpeg';
+const prueba_html=<i class="fa-brands fa-html5"/>
+const prueba_html_grande=<i class="fa-brands fa-html5 fa-10x" />
 
 const Dashboard_screen=()=>{
-
-  const navigate=useNavigate()
-  const[comments,setComments]=useState([])
-
-  let userDetail=JSON.parse(localStorage.getItem('user'))
-
-  useEffect(()=>{
-    axios.get('http://localhost:8000/api/comment/list')
-    .then(res=>{
-        console.log('did it - use effect get ')
-        console.log('this is res', res)
-        console.log('this is res.data....', res.data)
-        setComments(res.data)
-    })
-},[])
-
+  
   const handle_action=e=>{
     e.preventDefault()
-    console.log('this is action button , y comments', comments)
+    console.log('this is action button , y comments')
   }
 
-const back_to_cover=e=>{
-  e.preventDefault()
-  console.log('back to cover')
-  navigate('/')
-}
-
-    return(
+  return(
 
         <div className="App">
 
-
-
-
             <h1>javier gueneau</h1>
             <button onClick={e=>handle_action(e)} >action</button>
-            <button onClick={e=>back_to_cover(e)} >back to cover</button>
+            
+            
+            
 
-{/*             <img src={zurich_pexels} alt='stock_3'  />
- */}
-            <div className='iconos' >
-                    <Image_component/>
-                
-                
-                
-                
+
+            <div className='back_pink' >
+              <p>abajo element entre llaves. Se llama un elemento que usa Font Awesome component (version React) </p>
+              <p> ... que no me funciona mucho, porque </p>
+              {element}
+            </div>
+
+            <div className='back_green'>
+              <p>este funciona. Esto es HTML tambien. i class.</p>
+              <i class="fa-solid fa-mug-hot"></i>
+            </div>
+
+            <div className='back_pink' >
+              <p>esto es prueba HTML , para font awesome </p>
+              {prueba_html}
 
             </div>
 
-            <img src={stock_3} alt='stock_3' width='400px' />
-            <img src={stock_4} alt='stock_4' width='400px' />
-            <img src={stock_5} alt='stock_5' width='400px' />
-      
+            <div className='back_green' >
+              <p>prueba HTML grande</p>
+              {prueba_html_grande}
+            </div>
+
         </div>
 
     )

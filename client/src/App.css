@@ -7,18 +7,30 @@
 
 
 .App {
-  background-image: url(./pexels/zurich_pexels.jpeg);
-  background-repeat: no-repeat;
+/*   background-image: url(./pexels/zurich_pexels.jpeg);
+ */  background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
 /*   background-image:linear-gradient(to right, yellowgreen, yellow)
  */ 
- background-color: gray; 
+ background-color: cyan; 
 
+}
+
+.back_green{
+  background-color: green;
+}
+
+.back_pink{
+  background-color: pink;
 }
 
 .comment{
   background-color: cyan;
+}
+
+.fondo_pink{
+  background-color: pink;
 }
 
 /* De Dashboard Screen */
@@ -52,6 +64,10 @@ inside Image Component */
 .img_tec{
   background-color: whitesmoke;
   height: 50px;
+}
+
+.invencion_javier{
+  background-color: yellow;
 }
 
 .list-table, .list-table th, .list-table td{
